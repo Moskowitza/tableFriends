@@ -9,17 +9,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lianagitsit/tableFriends.git"
+    "url": "git+https://github.com/elisasara/tableFriends.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lianagitsit/tableFriends/issues"
+    "url": "https://github.com/elisasara/tableFriends/issues"
   },
-  "homepage": "https://github.com/lianagitsit/tableFriends#readme",
+  "homepage": "https://github.com/elisasara/tableFriends#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
-    "express": "^4.16.3",
-    "path": "^0.12.7"
+    "express": "^4.16.3"
   }
 }
