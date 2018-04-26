@@ -14,6 +14,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 
+// Variables to store table and waitlist information
+//===============================================================
+var tables= [];
+var waitlist = [];
+
 // Routes
 // =============================================================
 
