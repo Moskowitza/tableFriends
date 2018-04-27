@@ -35,24 +35,29 @@ app.get("/tables", function(req, res) {
   res.sendFile(path.join(__dirname, "tables.html"));
 });
 
-// Displays all characters
+
 app.get("/api/waitlist", function(req, res) {
   return res.json(waitlist);
 });
+
 app.get("/api/tables", (req, res) =>{
   return res.json(tables);
 })
-// Create New Characters - takes in JSON input
+
 app.post("/api/tables", function(req, res) {
   // req.body hosts is equal to the JSON post sent from the user
   // This works because of our body-parser middleware
   var reservation = req.body;
-
+  if (tables.length === 5) {
+    waitlist.push(reservation);
+    res.json(waitlist);
+  }
+  else {
   console.log(reservation);
 
   tables.push(reservation);
-
-  res.json(reservation);
+  res.json(tables);
+};
 });
 
 // Starts the server to begin listening
