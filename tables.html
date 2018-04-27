@@ -25,8 +25,18 @@
               <h4 class="panel-title">Current Reservations</h4>
             </div>
             <div class="panel-body" id="tableSection">
-            <div class="well" id="tableWell-01"><h2><span class="label label-primary">1</span> | 123</h2></div><div class="well" id="tableWell-11"><h2><span class="label label-primary">2</span> | 0000</h2></div></div>
-          </div>
+                <table>
+                    <th>
+                        <tr>
+                            ID
+                        </tr>
+                        <tr>Reservation Name</tr>
+                    </th>
+                    <td id="info">
+
+                    </td>
+                </table>
+           </div>
     </div>
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -42,18 +52,42 @@
   </div>
 
   <script type="text/javascript">
-    // Question: What does this code do?
-    $("#add-btn").on("click", function(event) {
-      event.preventDefault();
 
-      // Question: What does this code do??
-      $.get("/api/tables", reservations)
-        .then(function(data) {
-          console.log(data);
-          alert("Getting Reservations!");
-        });
+  
 
-    });
+// Here we get the location of the root page.
+// We use this instead of explicitly saying the URL is localhost:3001 because the url will change when we deploy.
+var currentURL = window.location.origin;
+
+// The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
+$.ajax({ url: currentURL + "/api/tables", method: "GET" })
+  .then(function(data) {
+
+  // Here we are logging the URL so we have access to it for troubleshooting
+    console.log("------------------------------------");
+    console.log("URL: " + currentURL + "/api/tables");
+    console.log("------------------------------------");
+
+    // Here we then log the NYTData to console, where it will show up as an object.
+    console.log(data);
+    console.log("------------------------------------");
+
+    // Loop through and display each of the customers
+    for (var i = 0; i < data.length; i++) {
+
+    // Create the HTML Well (Section) and Add the table content for each reserved table
+    var reservationId= data[i].uniqueId;
+    var nameId=data[i].name;
+    $("#info").append("<tr>"+reservationId+"</tr>" + "<tr>"+nameId+"</tr>")
+
+      // Then display the remaining fields in the HTML (Section Name, Date, URL)
+    }
+  });
+
+
+
+
+
   </script>
 </body>
 </html>
