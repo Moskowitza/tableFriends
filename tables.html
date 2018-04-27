@@ -54,10 +54,10 @@
       };
 
       // Question: What does this code do??
-      $.post("/api/characters", newCharacter)
+      $.get("/api/tables", reservations)
         .then(function(data) {
           console.log(data);
-          alert("Adding character...");
+          alert("Getting Reservations!");
         });
 
     });
