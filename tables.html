@@ -63,14 +63,6 @@ var currentURL = window.location.origin;
 $.ajax({ url: currentURL + "/api/tables", method: "GET" })
   .then(function(data) {
 
-  // Here we are logging the URL so we have access to it for troubleshooting
-    console.log("------------------------------------");
-    console.log("URL: " + currentURL + "/api/tables");
-    console.log("------------------------------------");
-
-    // Here we then log the NYTData to console, where it will show up as an object.
-    console.log(data);
-    console.log("------------------------------------");
 
     // Loop through and display each of the customers
     for (var i = 0; i < data.length; i++) {
@@ -78,7 +70,7 @@ $.ajax({ url: currentURL + "/api/tables", method: "GET" })
     // Create the HTML Well (Section) and Add the table content for each reserved table
     var reservationId= data[i].uniqueId;
     var nameId=data[i].name;
-    $("#info").append("<tr>"+reservationId+"</tr>" + "<tr>"+nameId+"</tr>")
+    $("#info").append("<tr><td>"+reservationId+"</td>" + "<td>"+nameId+"</td></tr>")
 
       // Then display the remaining fields in the HTML (Section Name, Date, URL)
     }
