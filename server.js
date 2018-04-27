@@ -39,7 +39,9 @@ app.get("/tables", function(req, res) {
 app.get("/api/waitlist", function(req, res) {
   return res.json(waitlist);
 });
-
+app.get("/api/tables", (req, res) =>{
+  return res.json(tables);
+})
 // Create New Characters - takes in JSON input
 app.post("/api/tables", function(req, res) {
   // req.body hosts is equal to the JSON post sent from the user
