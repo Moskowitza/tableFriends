@@ -16,8 +16,8 @@
       <h1 class="page-header"><span class="glyphicon glyphicon-fire"></span> Hot Restaurant</h1>
       <h3>Book your seat before they are all gone!</h3>
       <hr>
-      <a href="/view.html"><button class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-cutlery"></span> View Tables</button></a>
-      <a href="/make.html"><button class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-phone-alt"></span> Make Reservations</button></a>
+      <a href="/tables.html"><button class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-cutlery"></span> View Tables</button></a>
+      <a href="/reserve.html"><button class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-phone-alt"></span> Make Reservations</button></a>
     </div>
     <div class="row">
         <a href="#">API Table Link</a>
@@ -27,24 +27,10 @@
 
   <script type="text/javascript">
     // Question: What does this code do?
-    $("#add-btn").on("click", function(event) {
-      event.preventDefault();
-
-      var newCharacter = {
-        name: $("#name").val().trim(),
-        role: $("#role").val().trim(),
-        age: $("#age").val().trim(),
-        forcePoints: $("#force-points").val().trim()
-      };
+  
 
       // Question: What does this code do??
-      $.post("/api/characters", newCharacter)
-        .then(function(data) {
-          console.log(data);
-          alert("Adding character...");
-        });
 
-    });
   </script>
 </body>
 </html>
