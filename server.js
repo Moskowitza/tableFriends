@@ -14,10 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //THIS IS MY TEST COMMENT!
-
-
 // Variables to store table and waitlist information
-//===============================================================
 var tables= [];
 var waitlist = [];
 
